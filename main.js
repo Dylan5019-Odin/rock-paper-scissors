@@ -30,10 +30,34 @@ const playRound = (playerChoice, computerChoice) => {
 
 
 
-//Get user input, and generate a random choice for the computer
-    let computerChoice = getComputerChoice();
-    let playerChoice = prompt("Enter your choice");
 
 
-// play a round
-console.log(playRound(playerChoice, computerChoice));
+//Function to play 5 rounds and track the score
+const Game = () => {
+
+    let playerScore = 0;
+    let computerScore = 0;
+
+    for (let i = 0; i < 5; i++) {
+      //Get user input, and generate a random choice for the computer
+      let computerChoice = getComputerChoice();
+      let playerChoice = prompt("Enter your choice");
+      
+      let result = playRound(playerChoice, computerChoice);
+
+        if (result === `You Win! ${playerChoice} beats ${computerChoice}!`){
+            playerScore++
+        } else if (result === `You lose! ${playerChoice} losses to ${computerChoice}!`){
+            computerScore++
+        }
+
+        console.log(result);
+
+    }
+
+    console.log(`Player Won: ${playerScore} Times\nComputer Won: ${computerScore} Times\nDrawn Games: ${5-(playerScore + computerScore)}`);
+
+
+};
+
+Game();
