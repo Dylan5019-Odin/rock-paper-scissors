@@ -1,0 +1,28 @@
+
+.choice-buttons {
+    display: flex;
+    margin: 12px;
+    width: 200px;
+    justify-content: space-between;
+}
+
+.play-button {
+    display: flex;
+    margin: 12px;
+    width: 200px;
+    align-content: center;
+
+}
+
+.scores {
+    display: flex;
+    flex-direction: column;
+  
+ 
+}
+
+
+p {
+    font-size: 18px;
+    margin: 12px;
+}
